@@ -15,10 +15,10 @@ inputs:
     required: true
     default: dev
   debug:
-        description: 'Display debug logs during Flow Execution'
-        required: false
-        default: false
-        type: boolean
+    description: 'Display debug logs during Flow Execution'
+    required: false
+    default: false
+    type: boolean
 runs:
   using: "composite"
   steps:
