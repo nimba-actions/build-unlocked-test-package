@@ -29,7 +29,7 @@ runs:
         cumulusci-version: '${{ inputs.cumulusci-version }}'
         sfdx-version: '${{ inputs.sfdx-version }}'
         debug: '${{ inputs.debug }}'
-        flow-name: update_dependencies
+        task-name: update_dependencies
     - uses: nimba-actions/run-flow-scratch@main
       with:
         dev-hub-auth-url: '${{ inputs.dev-hub-auth-url }}'
