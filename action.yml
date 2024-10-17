@@ -14,6 +14,11 @@ inputs:
     description: 'Name of the scratch org config to use'
     required: true
     default: dev
+  debug:
+        description: 'Display debug logs during Flow Execution'
+        required: false
+        default: false
+        type: boolean
 runs:
   using: "composite"
   steps:
@@ -23,6 +28,7 @@ runs:
         org-name: '${{ inputs.org-name }}'
         cumulusci-version: '${{ inputs.cumulusci-version }}'
         sfdx-version: '${{ inputs.sfdx-version }}'
+        debug: '${{ inputs.debug }}'
         flow-name: update_dependencies
     - uses: nimba-actions/run-flow-scratch@v1
       with:
@@ -30,6 +36,7 @@ runs:
         org-name: '${{ inputs.org-name }}'
         cumulusci-version: '${{ inputs.cumulusci-version }}'
         sfdx-version: '${{ inputs.sfdx-version }}'
+        debug: '${{ inputs.debug }}'
         flow-name: build_unlocked_test_package
         commit-status-name: "Build Unlocked Test Package"
         commit-status-regex: "04t[a-zA-Z0-9]*"
