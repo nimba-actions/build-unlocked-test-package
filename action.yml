@@ -31,5 +31,5 @@ runs:
         debug: '${{ inputs.debug }}'
         flow-name: build_unlocked_test_package
         commit-status-name: "Build Unlocked Test Package"
-        commit-status-regex: "04t[a-zA-Z0-9]*"
+        commit-status-regex: "04t[a-zA-Z0-9]{15}"
         commit-status-description-prefix: "version_id: "
